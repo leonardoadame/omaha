@@ -52,7 +52,7 @@ rec_env.Replicate('$STAGING_DIR',
 # TODO(omaha3): Switch entirely to hammer running tests. For now, we must make
 # the test not runnable because it will be run during the build. See main.scons.
 import os
-if 'HAMMER_RUNS_TESTS' in os.environ.keys():
+if 'HAMMER_RUNS_TESTS' in os.environ:
   test_env = env.Clone()
 else:
   test_env = env.Clone(COMPONENT_TEST_RUNNABLE=False)
